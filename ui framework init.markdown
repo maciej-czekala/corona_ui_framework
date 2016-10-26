@@ -23,21 +23,22 @@ _[Table](http://docs.coronalabs.com/api/type/Table.html)._ Short description goe
 
 ### Available `args`
 
-`text` lable on the button
-`x` position
-`y` position
-`font` label font name
-`fontSize` label font size
-`width` button width
-`minWidth` button won't be smaller than this size
-`height` button height
-`margin` label side margin
-`cornerRadius` button corner radius
-`textColor` label color
-`fillColor` button background color
-`shadow` table, shadow options
-`shadow = {isActive = true}` bool show/hide shadow
-`touchEffect` enum (string) "android", "ios".
+##### `text` string, lable on the button
+##### `x` number, position
+##### `y` number, position
+##### `font` string, label font name
+##### `fontSize` number, label font size
+##### `width` number, button width
+##### `minWidth` number, button won't be smaller than this size
+##### `height` number, button height
+##### `margin` number, label side margin
+##### `cornerRadius` number, button corner radius
+##### `textColor` table rgb {1,0,0}, label color
+##### `fillColor` table rgb {1,0,1}, button background color
+##### `shadow` table, shadow options
+##### `shadow = {isActive = true}` bool show/hide shadow
+##### `touchEffect` enum (string) "android", "ios".
+##### `os` enum (string) "android", "ios". Force specyfic look.
 
 ## Examples
 
