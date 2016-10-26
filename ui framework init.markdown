@@ -23,11 +23,21 @@ _[Table](http://docs.coronalabs.com/api/type/Table.html)._ Short description goe
 
 ### Available `args`
 
-The `args` table contains the following properties:
-
-##### PROPERTY1 <small>text</small>
-_[string]()._ Short description goes here.
-
+`text` lable on the button
+`x` position
+`y` position
+`font` label font name
+`fontSize` label font size
+`width` button width
+`minWidth` button won't be smaller than this size
+`height` button height
+`margin` label side margin
+`cornerRadius` button corner radius
+`textColor` label color
+`fillColor` button background color
+`shadow` table, shadow options
+`shadow = {isActive = true}` bool show/hide shadow
+`touchEffect` enum (string) "android", "ios".
 
 ## Examples
 
