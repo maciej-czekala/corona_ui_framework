@@ -25,8 +25,8 @@ _[Table](http://docs.coronalabs.com/api/type/Table.html)._ Short description goe
 
 The `args` table contains the following properties:
 
-##### PROPERTY1 <small>(required)</small>
-_[TYPE]()._ Short description goes here.
+##### PROPERTY1 <small>text</small>
+_[string]()._ Short description goes here.
 
 
 ## Examples
