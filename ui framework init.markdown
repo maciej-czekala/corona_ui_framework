@@ -19,11 +19,7 @@ This creates new button object with platform specyfic visuals.
 	ui.newButton( table )
 
 ##### ARG1 <small>(required)</small>
-_[TYPE]()._ Short description goes here.
-
-##### options <small>(optional)</small>
-_[Table](http://docs.coronalabs.com/api/type/Table.html)._ Short description goes here. See **Format for options** below.
-
+_[Table](http://docs.coronalabs.com/api/type/Table.html)._ Short description goes here.
 
 ### Format for `options`
 
@@ -36,7 +32,7 @@ _[TYPE]()._ Short description goes here.
 ## Examples
 
 ``````lua
-local PLUGIN_NAME = require 'plugin.PLUGIN_NAME'
+local ui = require 'plugin.ui_framework'
 
-PLUGIN_NAME.FUNCTION( ARG1 )
+ui.newButton( {text = "cancel"} )
 ``````
