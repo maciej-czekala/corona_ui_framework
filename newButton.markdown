@@ -26,6 +26,7 @@ _[Table](http://docs.coronalabs.com/api/type/Table.html)._ Short description goe
 ##### `text` string, lable on the button
 ##### `x` number, position
 ##### `y` number, position
+##### `touchCallback` function, callback for touch event. Return whole "event" table.
 ##### `font` string, label font name
 ##### `fontSize` number, label font size
 ##### `width` number, button width
