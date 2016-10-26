@@ -18,7 +18,7 @@ This creates new button object with platform specyfic visuals.
 
 	ui.newButton( table )
 
-##### ARG1 <small>(required)</small>
+##### ARGS <small>(required)</small>
 _[Table](http://docs.coronalabs.com/api/type/Table.html)._ Short description goes here.
 
 ### Format for `options`
