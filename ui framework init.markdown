@@ -3,21 +3,20 @@
 |                      | &nbsp; 
 | -------------------- | ---------------------------------------------------------------
 | __Type__             | [function](http://docs.coronalabs.com/api/type/Function.html)
-| __Library__          | [PLUGIN_NAME.*](Readme.markdown)
-| __Return value__     | [TYPE]()
+| __Library__          | [ui.*](Readme.markdown)
+| __Return value__     | group()
 | __Keywords__         | 
 | __See also__         | 
 
 
 ## Overview
 
-This function does...
+This creates new button object with platform specyfic visuals.
 
 
 ## Syntax
 
-	PLUGIN_NAME.FUNCTION( ARG1 )
-	PLUGIN_NAME.FUNCTION( ARG1, options )
+	ui.newButton( table )
 
 ##### ARG1 <small>(required)</small>
 _[TYPE]()._ Short description goes here.
