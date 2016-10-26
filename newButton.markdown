@@ -44,6 +44,7 @@ _[Table](http://docs.coronalabs.com/api/type/Table.html)._ Short description goe
 
 ``````lua
 local ui = require 'plugin.ui_framework'
+ui:init()
 
 ui.newButton( {text = "cancel"} )
 ``````
