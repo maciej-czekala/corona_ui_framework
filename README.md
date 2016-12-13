@@ -1,6 +1,13 @@
 # corona_ui_framework
 documentation for corona ui framework plugin
+-- build.settings
+``````lua
+plugins = {  
+        ['plugin.ui_framework'] = {publisherId = 'com.skyjoy'}
+    }
+``````
 
+-- main.lua
 ``````lua
 local ui = require ("plugin.ui_framework")
 ui:init()
