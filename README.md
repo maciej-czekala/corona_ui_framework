@@ -1,6 +1,15 @@
 # corona_ui_framework
 documentation for corona ui framework plugin
 
+How To:
+
+[init()](init.markdown)
+
+[newButton()](newButton.markdown)
+
+[newToast()](newToast.markdown)
+
+
 -- build.settings
 ``````lua
 plugins = {  
