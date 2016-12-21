@@ -1,4 +1,7 @@
 # corona_ui_framework
+IMPORTANT: this plugin requires additional files to fully work.
+Please download whole "plugins" folder and place it next to main.lua file in your project. Please place whole folder, do not extract files.
+
 documentation for corona ui framework plugin
 
 How To:
