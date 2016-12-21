@@ -9,6 +9,9 @@ How To:
 
 [newToast()](newToast.markdown)
 
+[newProgress()](newProgress.markdown)
+
+[newSlider()](newSlider.markdown)
 
 -- build.settings
 ``````lua
