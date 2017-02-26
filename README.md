@@ -29,8 +29,9 @@ display.setDefault( "background", 1, 1, 1 )
 -- Load plugin library
 local ui = require ("plugin.ui_framework")
 ui:init({screenScale = "manual"})
+-- ui:init() -- default screen sacling. Define your scaling in config.lua file. 
 
--- function to calculate dpi points to pixels if we want to have very sharp app which uses full resolution.
+-- function to calculate dpi points to pixels if we want to have very sharp app which uses full device resolution.
 local toPx = ui.screen.toPx
 
 
