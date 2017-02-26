@@ -74,3 +74,20 @@ card.buttons["action1"]:setTouchCallback(function() print(card) card:removeSelf(
 	
 
 ``````
+
+-- config.lua
+``````lua
+application = 
+{
+	content = 
+	{
+		--scale = "adaptive", -- remove scaling if you want to use screenScale = "manual"
+		fps = 60,
+		imageSuffix =
+		{
+			["@2x"] = 1.3,
+			["@3x"] = 2.6,
+		}
+	},
+}
+``````
