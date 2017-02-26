@@ -25,6 +25,8 @@ plugins = {
 
 -- main.lua
 ``````lua
+display.setDefault( "background", 1, 1, 1 )
+
 local ui = require ("plugin.ui_framework")
 ui:init()
 
