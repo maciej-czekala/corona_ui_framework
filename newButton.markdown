@@ -41,8 +41,7 @@ _[Table](http://docs.coronalabs.com/api/type/Table.html)._ Short description goe
 ##### `touchEffect` enum (string) "android", "ios".
 ##### `os` enum (string) "android", "ios". Force specyfic look.
 ##### `isActive` bool, inactive does not fire touch events and is at .7 opacity.
-##### `style` enum(string), "flat", "flat_fill", "raised", "raised_fill", "float"
-
+##### `style` enum(string), "flat", "flat_fill", "raised", "raised_fill", "float", "back", "icon" - icon required to provide icon marker for ionicons font. There are available two references for now (ui.fonts.icon.menu, ui.fonts.icon.back)
 
 ## Examples
 
