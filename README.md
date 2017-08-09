@@ -47,7 +47,12 @@ end
 local x = display.contentWidth*.5
 
 -- navbar requires "http://ionicons.com/" font for icons. Just drop the font next to main.lua file in your project.
-local navbar = ui.newNavbar({title = "Application", buttons = {back = {text = "home", touchCallback = function() print("back touched") end}}})
+local navbar = ui.newNavbar({title = "Application", buttons = {
+    -- back = {text = "home", touchCallback = function() print("back touched") end}
+    icon = {icon = ui.fonts.icon.menu, touchCallback = function() print("back touched") end}
+    -- ui.fonts.icon.menu, ui.fonts.icon.back are available for now. You can add more manually.
+
+    }})
 navbar.x = display.contentWidth*.5
 
 -- ui.newButton({x = x*.25, y = toPx(50), style = "back", touchCallback = touch})
