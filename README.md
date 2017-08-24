@@ -50,31 +50,55 @@ local x = display.contentWidth*.5
 local navbar = ui.newNavbar({title = "Application", buttons = {
     -- back = {text = "home", touchCallback = function() print("back touched") end}
     icon = {icon = ui.fonts.icon.menu, touchCallback = function() print("back touched") end}
-    -- ui.fonts.icon.menu, ui.fonts.icon.back are available for now. You can add more manually.
 
     }})
 navbar.x = display.contentWidth*.5
+navbar.y = navbar.height*.5
+
+local tab_menu = ui.newTabMenu({x = display.contentWidth*.5,
+    textColor = {1,1,1},
+    items = {
+        {text = "home"},
+        {text = "list"}
+    },
+    touchCallback = function(e) print(e) end
+    })
+tab_menu.y = navbar.y + navbar.height*.5 + tab_menu.height*.5
 
 -- ui.newButton({x = x*.25, y = toPx(50), style = "back", touchCallback = touch})
 
-ui.newButton({x = x, y = toPx(100), style = "flat", touchCallback = touch})
+local stackPanelCenter = ui.newStackPanel({x = x, y = toPx(100), spacing = toPx(10)})
 
-ui.newButton({x = x, y = toPx(150), style = "flat_fill", touchCallback = touch})
+local btn_flat = ui.newButton({style = "flat", touchCallback = touch})
+stackPanelCenter:insert(btn_flat)
 
-ui.newButton({x = x, y = toPx(200), style = "raised", touchCallback = touch})
+local btn_fill = ui.newButton({style = "flat_fill", touchCallback = touch})
+stackPanelCenter:insert(btn_fill)
 
-ui.newButton({x = x, y = toPx(250), style = "raised_fill", touchCallback = touch})
+local btn_raised = ui.newButton({style = "raised", touchCallback = touch})
+stackPanelCenter:insert(btn_raised)
 
-ui.newButton({x = x, y = toPx(300), style = "float", touchCallback = touch})
+local btn_raised_fill = ui.newButton({style = "raised_fill", touchCallback = touch})
+stackPanelCenter:insert(btn_raised_fill)
 
-local switch = ui.newSwitch({x = x, y = toPx(350), touchCallback = switchTouch})
 
-local slider = ui.newSlider({x = x, y = toPx(400), progress = .5, touchCallback = sliderTouch})
+local stackPanelRight = ui.newStackPanel({x = display.contentWidth*.75, y = toPx(100), spacing = toPx(10)})
 
-local progress = ui.newProgressBar({x = x, y = toPx(450), progress = 0})
+local btn_float = ui.newButton({style = "float", touchCallback = touch})
+stackPanelRight:insert(btn_float)
+
+local switch = ui.newSwitch({touchCallback = switchTouch})
+stackPanelRight:insert(switch)
+
+local slider = ui.newSlider({width = display.contentWidth*.25, progress = .5, touchCallback = sliderTouch})
+stackPanelRight:insert(slider)
+
+local progress = ui.newProgressBar({width = display.contentWidth*.25, progress = 0})
 progress:setProgress(.5, 500)
+stackPanelRight:insert(progress)
 
-local frame = ui.newFrame({x = x, y = toPx(500), width = 320, height = 50})
+local frame = ui.newFrame({width = display.contentWidth*.25, height = toPx(50)})
+stackPanelRight:insert(frame)
 
 
 local function newCard()
@@ -85,7 +109,9 @@ local function newCard()
 	card.buttons["action1"]:setTouchCallback(function() print(card) card:removeSelf()  end)
 end
 
-ui.newButton({x = x, y = toPx(500), text = "show card", style = "raised", touchCallback = newCard})
+local btn_card = ui.newButton({text = "show card", style = "raised", 
+	touchCallback = newCard})
+stackPanelRight:insert(btn_card)
 
 
 
@@ -105,9 +131,9 @@ end
 local tableView = widget.newTableView(
     {
         left = 0,
-        top = display.contentHeight - toPx(100),
-        height = toPx(100),
-        width = display.contentWidth,
+        top = toPx(108),
+        height = display.contentHeight - toPx(100),
+        width = toPx(200),
         onRowRender = onRowRender,
         --noLines = true,
         onRowTouch = function(e) ui.newToast("progress: "..e.row.params) end,
