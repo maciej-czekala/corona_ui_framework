@@ -58,12 +58,16 @@ navbar.y = navbar.height*.5
 local tab_menu = ui.newTabMenu({x = display.contentWidth*.5,
     textColor = {1,1,1},
     items = {
-        {text = "home"},
-        {text = "list"}
+        {text = "home", icon = ui.fonts.icon.home}, -- icon = {default = "", outline = ""} for ios you need 2 icons. one is outline and one i filled.
+        {text = "list", icon = ui.fonts.icon.list}
     },
     touchCallback = function(e) print(e) end
     })
-tab_menu.y = navbar.y + navbar.height*.5 + tab_menu.height*.5
+if ui.device.isAndroid then
+    tab_menu.y = navbar.y + navbar.height*.5 + tab_menu.height*.5
+elseif ui.device.isIos then
+    tab_menu.y = display.contentHeight - tab_menu.height*.5
+end
 
 -- ui.newButton({x = x*.25, y = toPx(50), style = "back", touchCallback = touch})
 
@@ -152,7 +156,9 @@ for i = 1, 40 do
         }
     )
 end
-	
+
+tab_menu:toFront()
+
 
 ``````
 
