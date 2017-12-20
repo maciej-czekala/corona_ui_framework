@@ -47,19 +47,26 @@ end
 local x = display.contentWidth*.5
 
 -- navbar requires "http://ionicons.com/" font for icons. Just drop the font next to main.lua file in your project.
-local navbar = ui.newNavbar({title = "Application", buttons = {
-    -- back = {text = "home", touchCallback = function() print("back touched") end}
-    icon = {icon = ui.fonts.icon.menu, touchCallback = function() print("back touched") end}
+local navbar = ui.newNavbar({
+    title = "Application", 
+    buttons = {
+        left = { config = { style = "back", touchCallback = function() print("back touched") end}, label = {text = "home"} },
+        right = {
+            {config = { style = "icon", touchCallback = function() print("back touched") end}, icon = {text = ui.fonts.icon.options} },
+            {config = { style = "icon", touchCallback = function() print("back touched") end}, icon = {text = ui.fonts.icon.search} },
 
+        } 
     }})
 navbar.x = display.contentWidth*.5
 navbar.y = navbar.height*.5
 
-local tab_menu = ui.newTabMenu({x = display.contentWidth*.5,
-    textColor = {1,1,1},
-    items = {
-        {text = "home", icon = ui.fonts.icon.home}, -- icon = {default = "", outline = ""} for ios you need 2 icons. one is outline and one i filled.
-        {text = "list", icon = ui.fonts.icon.list}
+local tab_menu = ui.newTabMenu({
+    x = display.contentWidth*.5,
+    tabs = {
+        { label = {text = "home"}, icon = {text = ui.fonts.icon.home } },
+        { label = {text = "list"}, icon = {text = ui.fonts.icon.list } },
+        { label = {text = "list"}, icon = {text = ui.fonts.icon.list } },
+        
     },
     touchCallback = function(e) print(e) end
     })
