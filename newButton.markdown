@@ -21,27 +21,43 @@ This creates new button object with platform specyfic visuals.
 ##### ARGS <small>(required)</small>
 _[Table](http://docs.coronalabs.com/api/type/Table.html)._ Short description goes here.
 
-### Available `args`
 
-##### `text` string, lable on the button
-##### `x` number, position
-##### `y` number, position
-##### `touchCallback` function, callback for touch event. Return whole "event" table.
-##### `font` string, label font name
-##### `fontSize` number, label font size
-##### `width` number, button width
-##### `minWidth` number, button won't be smaller than this size
-##### `height` number, button height
-##### `margin` number, label side margin
-##### `cornerRadius` number, button corner radius
-##### `textColor` table rgb {1,0,0}, label color
-##### `fillColor` table rgb {1,0,1}, button background color
-##### `shadow` table, shadow options
-##### `shadow = {isActive = true}` bool show/hide shadow
-##### `touchEffect` enum (string) "android", "ios".
-##### `os` enum (string) "android", "ios". Force specyfic look.
-##### `isActive` bool, inactive does not fire touch events and is at .7 opacity.
-##### `style` enum(string), "flat", "flat_fill", "raised", "raised_fill", "float", "back", "icon" - icon required to provide icon marker for ionicons font. There are available two references for now (ui.fonts.icon.menu, ui.fonts.icon.back)
+-- all variables are optional. If not set, will take default.
+
+{
+	config = {
+		style = "icon", -- enum(string), "flat", "flat_fill", "raised", "raised_fill", "float", "back", "icon" - icon required
+		width = 100,
+		minWidth = 36,
+		height = 36,
+		margin = 16,
+		color = {1,1,1},
+		x = 0,
+		y = 0,
+	},
+	icon = {
+		text = ui.fonts.icon.options,
+		fontSize = 12,
+		x = 0,
+		y = 0,
+		color = {1,1,1},
+		isActive = true
+	},
+	label = {
+		text = "",
+		x = 0,
+		y = 0,
+		font = "",
+		fontSize = 12,
+		color = {1,1,1},
+		isActive = true
+	},
+	parent = group, -- parent group
+	isAndroid = true, -- general look
+	isIos = false, -- general look
+},
+
+to provide icon marker for ionicons font. There are available two references for now (ui.fonts.icon.menu, ui.fonts.icon.back)
 
 ## Examples
 
@@ -49,5 +65,5 @@ _[Table](http://docs.coronalabs.com/api/type/Table.html)._ Short description goe
 local ui = require 'plugin.ui_framework'
 ui:init()
 
-ui.newButton( {text = "cancel"} )
+ui.newButton( { config = { style = "flat" }, label = {text = "Test"} } )
 ``````
