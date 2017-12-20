@@ -80,22 +80,22 @@ end
 
 local stackPanelCenter = ui.newStackPanel({x = x, y = toPx(100), spacing = toPx(10)})
 
-local btn_flat = ui.newButton({style = "flat", touchCallback = touch})
+local btn_flat = ui.newButton({ config = {style = "flat", touchCallback = touch} })
 stackPanelCenter:insert(btn_flat)
 
-local btn_fill = ui.newButton({style = "flat_fill", touchCallback = touch})
+local btn_fill = ui.newButton({ config = { style = "flat_fill", touchCallback = touch} })
 stackPanelCenter:insert(btn_fill)
 
-local btn_raised = ui.newButton({style = "raised", touchCallback = touch})
+local btn_raised = ui.newButton({ config = { style = "raised", touchCallback = touch} })
 stackPanelCenter:insert(btn_raised)
 
-local btn_raised_fill = ui.newButton({style = "raised_fill", touchCallback = touch})
+local btn_raised_fill = ui.newButton({ config = { style = "raised_fill", touchCallback = touch} })
 stackPanelCenter:insert(btn_raised_fill)
 
 
 local stackPanelRight = ui.newStackPanel({x = display.contentWidth*.75, y = toPx(100), spacing = toPx(10)})
 
-local btn_float = ui.newButton({style = "float", touchCallback = touch})
+local btn_float = ui.newButton({ config = { style = "float", touchCallback = touch } })
 stackPanelRight:insert(btn_float)
 
 local switch = ui.newSwitch({touchCallback = switchTouch})
@@ -120,8 +120,8 @@ local function newCard()
 	card.buttons["action1"]:setTouchCallback(function() print(card) card:removeSelf()  end)
 end
 
-local btn_card = ui.newButton({text = "show card", style = "raised", 
-	touchCallback = newCard})
+local btn_card = ui.newButton({ config = { text = "show card", style = "raised", 
+	touchCallback = newCard } })
 stackPanelRight:insert(btn_card)
 
 
