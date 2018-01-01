@@ -86,11 +86,38 @@ stackPanelCenter:insert(btn_flat)
 local btn_fill = ui.newButton({ config = { style = "flat_fill", touchCallback = touch} })
 stackPanelCenter:insert(btn_fill)
 
-local btn_raised = ui.newButton({ config = { style = "raised", touchCallback = touch} })
-stackPanelCenter:insert(btn_raised)
+-- local btn_raised = ui.newButton({ config = { style = "raised", touchCallback = touch } })
+-- stackPanelCenter:insert(btn_raised)
 
-local btn_raised_fill = ui.newButton({ config = { style = "raised_fill", touchCallback = touch} })
-stackPanelCenter:insert(btn_raised_fill)
+-- local btn_raised_fill = ui.newButton({ config = { style = "raised_fill", touchCallback = touch } })
+-- stackPanelCenter:insert(btn_raised_fill)
+
+local input = ui.newInput({
+    config = {
+        isSecure = false, 
+        -- submittedCalllback = function(value) print(value) end, 
+    },
+    placeholder = {
+        text = "login"
+    }
+})
+
+local input_2 = ui.newInput({
+    config = {
+        isSecure = true, 
+        -- submittedCalllback = function(value) print(value) end, 
+    },
+    placeholder = {
+        text = "password"
+    }
+})
+
+stackPanelCenter:insert(input)
+stackPanelCenter:insert(input_2)
+
+
+input:setSubmittedCallback(function() input_2:setFocus() end)
+input_2:setSubmittedCallback(function() input_2:removeFocus() end)
 
 
 local stackPanelRight = ui.newStackPanel({x = display.contentWidth*.75, y = toPx(100), spacing = toPx(10)})
