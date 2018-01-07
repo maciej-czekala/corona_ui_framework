@@ -1,10 +1,12 @@
 -- Example
 
 local loader = ui.newLoader({
+	x = display.contentWidth*.5,
+	y = display.contentHeight*.5,
 	tag = "test" -- optional
 })
-loader.x = display.contentWidth*.5
-loader.y = display.contentHeight*.5
+-- loader.x = display.contentWidth*.5
+-- loader.y = display.contentHeight*.5
 
 timer.performWithDelay( 1000, 
 	function() 

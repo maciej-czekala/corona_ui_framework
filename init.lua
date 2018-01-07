@@ -8,6 +8,12 @@ ui:addColor("green", {117/255, 193/255, 164/255}) -- add color to be available u
 
 ui:init({
 	themeColor = "blue", -- red, greem blue  
-	os = "ios"
+	os = "ios", -- force specyfic os style. If not set it will choose style automaticallly based on device os
+	screenScale = "manual", -- flag to used screen scaling for better sharpnes. It will use full device resolution.scrollView
+	-- make sure to turn of scaling in config file. Use toPx function to calculate point to pixels. 
+	enable = {
+        scrollView = true,
+        loader = true
+        }
 })
 

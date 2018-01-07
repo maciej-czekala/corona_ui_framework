@@ -7,7 +7,7 @@
 ------------------------------------------------------------
 display.setDefault( "background", 1, 1, 1 )
 -- Load plugin library
-require("print")
+
 local ui = require ("plugin.ui_framework")
 ui:init({screenScale = "manual",
     enable = {
