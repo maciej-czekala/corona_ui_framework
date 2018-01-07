@@ -15,3 +15,12 @@ colors.black
 colors.white
 colors.transparent
 
+
+local device = ui.device
+device.isAndroid -- flag to define if device is android
+device.isIos -- flag to define if device is android
+
+-- available icons defined. All icons come from ionicons font. you have to get it to use those icons.  http://ionicons.com/
+local icon = ui.fonts.icon
+icon.home
+icon.list
