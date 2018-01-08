@@ -56,6 +56,10 @@ local function buildSearch()
     search_bar:setSubmittedCallback(function(input_value) print(input_value) search_bar:removeFocus() end)
     search_bar.x = display.contentWidth*.5
     search_bar.y = search_bar.height*.5
+
+    local no_data = ui.newNoData({tag = "no_data"})
+    no_data.x = display.contentWidth*.5
+    no_data.y = display.contentHeight*.5
 end
 -- navbar requires "http://ionicons.com/" font for icons. Just drop the font next to main.lua file in your project.
 local navbar = ui.newNavbar({
