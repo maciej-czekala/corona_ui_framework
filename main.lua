@@ -274,8 +274,8 @@ local tableView = ui.newScrollView(
 for i = 1, 20 do
 
 --     -- Insert a row into the tableView
-local size = ui.helper:ratio({ratio = "16:9", height = toPx(30)})
-print(toPx(30))
+local size = ui.helper.ratio({ratio = "16:9", height = toPx(30)})
+--print(toPx(30))
     tableView:insertItem(
         {
             rowHeight = toPx(30),
