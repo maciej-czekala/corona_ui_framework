@@ -21,7 +21,7 @@ local toPx = ui.screen.toPx
 
 
 local function touch()
-	ui.newToast("my toast!")
+	ui.newToast({label = {text = "my toast!" }})
 end
 
 local function showLoader()
@@ -33,11 +33,11 @@ local function showLoader()
 end
 
 local function switchTouch(e)
-	ui.newToast("is on: "..tostring(e.isOn))
+    ui.newToast({label = {text = "is on: "..tostring(e.isOn) }})
 end
 
 local function sliderTouch(e)
-	ui.newToast("progress: "..e.progress)
+    ui.newToast({label = {text = "progress: "..e.progress }})
 end
 
 local x = display.contentWidth*.5
