@@ -4,12 +4,18 @@
 local ui = require 'plugin.ui_framework'
 ui:init()
 
-ui.newSlider({
+local slider = ui.newSlider({
 	x = x, 
 	y = 350, 
+	-- width = display.contentWidth,
+	-- height = 5,
 	progress = .5, 
 	touchCallback = 
 		function(e) 
 			print("progress: "..e.progress) 
 		end
 })
+
+-- slider:setProgress(.5)
+-- slider:setIsActive(true)
+-- slider:setTouchCallback(function() end) -- callback can be set later on.
